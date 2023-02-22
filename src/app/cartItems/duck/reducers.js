@@ -10,6 +10,9 @@ const INITIAL_STATE = {
     ]
 }
 
+
+
+
 const cartReducer = (state = INITIAL_STATE, action) => {
     switch (action.type){
       case types.ADD_ITEM:
@@ -20,9 +23,13 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         return{ 
           ...state, list: []
         }
+      case types.DELETE_ITEM:
+        return{
+          ...state, list:[...state.list.filter((item)=> action.item !== item)]
+        }
       
       default:
-            return state
+      return state
     }
 }
 

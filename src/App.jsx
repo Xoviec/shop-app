@@ -31,7 +31,7 @@ export const App = (data) =>{
     <div className="App">
       <div>
         {/* <CartItemsContainer/> */}
-        <AddCartItem title={'eesadas'}/>
+        {/* <AddCartItem title={'eesadas'}/> */}
       </div>
       {
         products ? 

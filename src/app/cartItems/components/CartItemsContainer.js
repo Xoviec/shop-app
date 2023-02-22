@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from "react";
 import { connect } from "react-redux";
 import cartReducer, { cartTypes } from "../duck";
+import DeleteItem from "./DeleteItem";
 
 const CartItemsContainer = (props) =>{
 
@@ -9,8 +10,9 @@ const CartItemsContainer = (props) =>{
         <div>
         {
             props.items.list.map(item=>
-                <div>
+                <div className="cart-item">
                     {item}
+                    <DeleteItem id={item}/>
                 </div>    
             )
         }

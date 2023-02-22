@@ -12,14 +12,16 @@ import { createStore } from 'redux';
 import rootReducer from '../reducers';
 import { cartActions } from '../app/cartItems/duck';
 
-// const store = createStore(rootReducer, composeWithDevTools())
+const store = createStore(rootReducer, composeWithDevTools())
 
 
-// window.store = store
+window.store = store
 
 
 
-// store.dispatch(cartActions.add('sokoloko'))
+store.dispatch(cartActions.add('sokoloko'))
+store.dispatch(cartActions.deleteItem('iphone'))
+
 
 // console.log(cartActions.add)
 

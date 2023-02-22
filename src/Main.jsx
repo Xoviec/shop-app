@@ -5,6 +5,7 @@ import { App } from "./App"
 import { Navbar } from "./components/navbar"
 import { Product } from "./components/product"
 import { Contact } from "./components/contact"
+import './index.css';
 
 
 export const Main = () =>{
@@ -20,12 +21,19 @@ export const Main = () =>{
 
 
     return(
-        <Routes>
-            <Route path='/' element={<App output={output}/>}/>
-            <Route path='/contact' element={<Contact/>}/>
-            {/* <Route path='/users' element={<Users data={data} handleAddData={addData}/>}/> */}
-            <Route path='/:id' element={<Product output={output}/>}/>
-        </Routes>
+        <>
+        <Navbar/>
+        <div className='container'>
+            <Routes>
+                <Route path='/' element={<App output={output}/>}/>
+                <Route path='/contact' element={<Contact/>}/>
+                {/* <Route path='/users' element={<Users data={data} handleAddData={addData}/>}/> */}
+                <Route path='/:id' element={<Product output={output}/>}/>
+            </Routes>
+        </div>
+
+        </>
+
 
     )
 }

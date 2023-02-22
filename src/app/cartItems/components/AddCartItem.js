@@ -8,10 +8,6 @@ export const AddCartItem = (props) =>{
     const itemInput = React.createRef()
 
     const addItem = (e) =>{
-        // e.preventDefault()
-        // console.log(e.target.value)
-        // console.log(props.add('elo'))
-        // console.log(cartActions)
         props.add(e.target.value)
     }
 

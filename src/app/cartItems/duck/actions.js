@@ -9,7 +9,12 @@ const reset = item => ({
     type: types.RESET_CART, item
 })
 
+const deleteItem = item => ({
+    type: types.DELETE_ITEM, item
+})
+
 export default {
     add,
-    reset
+    reset,
+    deleteItem
 }

@@ -23,9 +23,7 @@ code {
   gap: 5rem;
   padding-left: 5rem;
 }
-.nav-item{
-  background-color: chartreuse;
-}
+
 
 .nav-item:last-child{
   margin-top: 3rem;
@@ -42,12 +40,17 @@ code {
 
 .cart{
   position: absolute;
-  height: 25rem;
+  height: 10rem;
   width: 17rem;
   background-color: blueviolet;
   color: wheat;
+  overflow-y: scroll
 }
 
-.navv{
-  margin-bottom: 3rem;
+.cart-item{
+  height: 3rem;
+}
+
+.container{
+  padding-top: 3rem;
 }

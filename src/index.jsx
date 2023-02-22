@@ -14,7 +14,6 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <Navbar/>
         <Main/>
       </BrowserRouter>
     </Provider>

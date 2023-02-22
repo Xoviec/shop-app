@@ -33,8 +33,10 @@ export const Product = (output) =>{
 
     return(
         <div className='product-page'>
+            <div className='product-info'>
             {item?.title}
             <AddCartItem title={item.title}/>
+            </div>
         </div>
     )
 }
