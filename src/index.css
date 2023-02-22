@@ -11,3 +11,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar{
+  position: fixed;
+  background-color: rgb(58, 117, 236);
+  height: 3rem;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5rem;
+  padding-left: 5rem;
+}
+.nav-item{
+  background-color: chartreuse;
+}
+
+.nav-item:last-child{
+  margin-top: 3rem;
+}
+
+
+.navbar button{
+  outline: none;
+}
+
+.nav-cart{
+  margin-right: 0;
+}
+
+.cart{
+  position: absolute;
+  height: 25rem;
+  width: 17rem;
+  background-color: blueviolet;
+  color: wheat;
+}
+
+.navv{
+  margin-bottom: 3rem;
+}
