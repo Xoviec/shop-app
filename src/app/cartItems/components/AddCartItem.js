@@ -8,11 +8,11 @@ export const AddCartItem = (props) =>{
     const itemInput = React.createRef()
 
     const addItem = (e) =>{
-        props.add(e.target.value)
+        props.add(props.title, props.price, props.thumbnail)
     }
 
     return( 
-        <button onClick={addItem} value={props.title} >
+        <button onClick={addItem}>
             Dodaj do koszyka
         </button>
  
@@ -20,7 +20,7 @@ export const AddCartItem = (props) =>{
 }
 
 const mapDispatchToProps = dispatch =>({
-    add: cartItem => dispatch(actions.add(cartItem))
+    add: (cartItem, itemPrice, itemThumbnail) => dispatch(actions.add(cartItem, itemPrice, itemThumbnail))
 })
 
 export default connect(null, mapDispatchToProps)(AddCartItem)
