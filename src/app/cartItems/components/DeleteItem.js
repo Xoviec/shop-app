@@ -12,8 +12,8 @@ export const DeleteItem = (props) =>{
     }
 
     return( 
-        <button onClick={deleteItem} value={props.id} >
-            X
+        <button className="button-delete-from-cart" onClick={deleteItem} value={props.id} >
+            usuń
         </button>
  
     )

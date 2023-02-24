@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import  AddCartItem from '../app/cartItems/components/AddCartItem';
 
 
-
   export const ItemsLIst = (props) =>{
 
     return(
@@ -39,7 +38,7 @@ import  AddCartItem from '../app/cartItems/components/AddCartItem';
                     </div>
                 </div>
                 <div>
-                    <AddCartItem title={props.title}/>
+                    <AddCartItem title={props.title} price={props.price} thumbnail={props.thumbnail}/>
 
                 </div>
             </div>

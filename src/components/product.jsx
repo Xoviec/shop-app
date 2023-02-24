@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import AddCartItem from '../app/cartItems/components/AddCartItem';
 
+
+
 export const Product = (output) =>{
 
     // const [output, setOutput] = useState([])
@@ -30,12 +32,13 @@ export const Product = (output) =>{
 
     console.log(item)
 
+    console.log(item.thumbnail)
 
     return(
         <div className='product-page'>
             <div className='product-info'>
             {item?.title}
-            <AddCartItem title={item.title}/>
+            <AddCartItem price={item.price} title={item.title} thumbnail={item.thumbnail}/>
             </div>
         </div>
     )

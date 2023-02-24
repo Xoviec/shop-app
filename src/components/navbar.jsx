@@ -19,8 +19,8 @@ window.store = store
 
 
 
-store.dispatch(cartActions.add('sokoloko'))
-store.dispatch(cartActions.deleteItem('iphone'))
+// store.dispatch(cartActions.add('sokoloko', 'dupa'))
+// store.dispatch(cartActions.deleteItem('iphone'))
 
 
 // console.log(cartActions.add)
