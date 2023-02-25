@@ -38,23 +38,23 @@ export const Navbar = ({cart}) =>{
 
     return(
         <div className='navbar'>
-                <div className='nav-item'>
-                    <Link  to='/'>
-                        <button className={`${active==='/' ? `active` : 'non-active'}`}>
-                            Home
-                        </button>
-                    </Link>
+                <div className='nav-buttons'>
+                        <Link  to='/'>
+                            <button className={`${active==='/' ? `active` : 'non-active'}`}>
+                                Home
+                            </button>
+                        </Link>
+                        <Link to='/contact'>
+                            <button className={`${active==='/contact' ? `active` : 'non-active'}`}>
+                                Contact
+                            </button>
+                        </Link>
+
+                    <div className='nav-item'>
+                        <Cart/>
+                    </div>
                 </div>
-                <div className='nav-item'>
-                    <Link to='/contact'>
-                        <button className={`${active==='/contact' ? `active` : 'non-active'}`}>
-                            Contact
-                        </button>
-                    </Link>
-                </div>
-                <div className='nav-item'>
-                    <Cart/>
-                </div>
+
         
         </div>
     )
