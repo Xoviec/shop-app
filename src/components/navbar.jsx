@@ -40,12 +40,12 @@ export const Navbar = ({cart}) =>{
         <div className='navbar'>
                 <div className='nav-buttons'>
                         <Link  to='/'>
-                            <button className={`${active==='/' ? `active` : 'non-active'}`}>
+                            <button className={`${active==='/' ? `active` : 'non-active'} nav-btn`}>
                                 Home
                             </button>
                         </Link>
                         <Link to='/contact'>
-                            <button className={`${active==='/contact' ? `active` : 'non-active'}`}>
+                            <button className={`${active==='/contact' ? `active` : 'non-active'} nav-btn`}>
                                 Contact
                             </button>
                         </Link>
