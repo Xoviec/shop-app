@@ -8,7 +8,17 @@ export const AddCartItem = (props) =>{
     const itemInput = React.createRef()
 
     const addItem = (e) =>{
-        props.add(props.title, props.price, props.thumbnail)
+        const item = props.items.list.find((item) => item.title === (props.title))
+
+        item ? item.title = item.title+1 : props.add(props.title, props.price, props.thumbnail)
+
+
+        // console.log(props.items.list)
+        // console.log(props.items)       
+        // console.log(item)
+        // console.log(props.items.list[0].title)
+        // props.items.list[0].title = 'chuj'
+        // props.add(props.title, props.price, props.thumbnail)
     }
 
     return( 
@@ -23,4 +33,8 @@ const mapDispatchToProps = dispatch =>({
     add: (cartItem, itemPrice, itemThumbnail) => dispatch(actions.add(cartItem, itemPrice, itemThumbnail))
 })
 
-export default connect(null, mapDispatchToProps)(AddCartItem)
+const mapStateToProps = state => ({
+    items: state.cartItems
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddCartItem)
