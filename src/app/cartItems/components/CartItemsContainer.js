@@ -53,22 +53,6 @@ const CartItemsContainer = (props) =>{
  
 
 
-  
-
-        {/* <div className={`${props.items.list.length > 0 ? `cart-total` : 'cart-total'}`}>
-            {
-                props.items.list.length > 0 ?
-                <div className="cart-total">
-                    <p>Do zapłaty:</p>
-                    <p>{totalPrice}$</p> 
-                </div>
-                
-                :
-                <div className="cart-total">Koszyk jest pusty</div>
-            }
-            
-        </div> */}
-
 
 
     </div>

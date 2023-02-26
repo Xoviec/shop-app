@@ -33,6 +33,11 @@ code {
   cursor: pointer;
 }
 
+.navbar button:hover{
+  background-color: rgb(0, 114, 187);
+  transition: 0.3s;
+}
+
 .navbar .btn-active{
   background-color: rgb(0, 114, 187);
 
