@@ -1,8 +1,8 @@
 import types from './types'
 
 
-const add = (item, item2, thumbnail) =>({
-    type: types.ADD_ITEM, item, item2, thumbnail
+const add = (item, item2, thumbnail, ammount) =>({
+    type: types.ADD_ITEM, item, item2, thumbnail, ammount
 })
 
 const reset = item => ({

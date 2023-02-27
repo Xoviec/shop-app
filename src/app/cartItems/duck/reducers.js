@@ -17,13 +17,14 @@ const INITIAL_STATE = {
       {
         title: 'iphone',
         price: 720,
-        thumbnail: ''
+        thumbnail: '',
+        ammount: 1
       },
       {
         title: 'iphonex',
         price: 900,
-        thumbnail: ''
-
+        thumbnail: '',
+        ammount: 1
       }
   ]
 }
@@ -32,7 +33,7 @@ const cartReducer = (state = INITIAL_STATE, action) => {
     switch (action.type){
       case types.ADD_ITEM:
         return{
-          ...state, list: [...state.list, {title: action.item, price: action.item2, thumbnail: action.thumbnail}]
+          ...state, list: [...state.list, {title: action.item, price: action.item2, thumbnail: action.thumbnail, ammount: action.ammount}]
         }
       case types.RESET_CART:
         return{ 
