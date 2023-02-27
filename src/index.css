@@ -22,7 +22,7 @@ code {
   height: 3rem;
   justify-content: space-around;
   align-items: center;
-  padding-left: 10rem;
+  padding-left: 5rem;
   box-shadow: rgb(0 0 0 / 64%) 0px 2px 8px -5px;
 
 }
@@ -202,6 +202,13 @@ code {
 
 .container{
   padding-top: 6rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  /* justify-content: center; */
+  background-color: #d2e9f7;
 }
 
 .button-delete-from-cart{
@@ -211,4 +218,78 @@ code {
   border: none;
   background: none;
   color: rgb(255, 255, 255);
+}
+
+.product-container{
+  background-color: #62e297;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50rem;
+  padding: 2rem;
+  margin: 10px 0 10px 0;
+  border-radius: 20px;
+}
+
+.div1 { grid-area: 1 / 1 / 6 / 5; }
+
+
+
+.img-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  overflow: hidden;
+  border-radius: 20px;
+  height: 300px;
+  width: 300px;
+}
+
+.img-container img{
+  cursor: pointer;
+  object-fit: contain;
+  max-height: 300px;
+  max-width: 300px;
+}
+
+.product-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+  width: 300px;
+  /* background-color: green; */
+}
+
+.product-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-info p{
+  font: bold;
+  font-size: 1.8rem;
+}
+
+.product-brand-category{
+  opacity: 0.5;
+}
+
+.product-price{
+  font:bold;
+  font-size: 2rem;
+}
+
+.text-orange{
+  color: orange
+}
+
+.text-red{
+  color: red
+}
+
+.text-green{
+  color: green
 }

@@ -10,7 +10,7 @@ export const AddCartItem = (props) =>{
     const addItem = (e) =>{
         const item = props.items.list.find((item) => item.title === (props.title))
 
-        item ? item.title = item.title+1 : props.add(props.title, props.price, props.thumbnail)
+        item ? item.ammount = (item.ammount+1) : props.add(props.title, props.price, props.thumbnail, 1)
 
 
         // console.log(props.items.list)
@@ -30,7 +30,7 @@ export const AddCartItem = (props) =>{
 }
 
 const mapDispatchToProps = dispatch =>({
-    add: (cartItem, itemPrice, itemThumbnail) => dispatch(actions.add(cartItem, itemPrice, itemThumbnail))
+    add: (cartItem, itemPrice, itemThumbnail, ammount) => dispatch(actions.add(cartItem, itemPrice, itemThumbnail, ammount))
 })
 
 const mapStateToProps = state => ({
