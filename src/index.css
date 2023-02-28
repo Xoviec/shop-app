@@ -181,6 +181,7 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-end;
 
 }
 .cart-item-container p{
@@ -281,7 +282,8 @@ code {
 }
 
 .product-brand-category{
-  opacity: 0.5;
+  /* opacity: 0.5; */
+  color: #484848;
 }
 
 .product-price{

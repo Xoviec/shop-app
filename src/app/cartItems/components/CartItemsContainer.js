@@ -18,7 +18,7 @@ const CartItemsContainer = (props) =>{
             {
             props.items.list.map(item=>
                 (   
-                    totalPrice+=item.price,
+                    totalPrice+=item.price*item.ammount,
 
                     <div className="cart-item">
                     <div className="cart-image">
