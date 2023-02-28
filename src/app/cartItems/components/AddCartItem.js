@@ -30,7 +30,8 @@ export const AddCartItem = (props) =>{
 }
 
 const mapDispatchToProps = dispatch =>({
-    add: (cartItem, itemPrice, itemThumbnail, ammount) => dispatch(actions.add(cartItem, itemPrice, itemThumbnail, ammount))
+    add: (cartItem, itemPrice, itemThumbnail, ammount) => dispatch(actions.add(cartItem, itemPrice, itemThumbnail, ammount)),
+    delete: cartItem => dispatch(actions.deleteItem(cartItem))
 })
 
 const mapStateToProps = state => ({

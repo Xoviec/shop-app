@@ -31,6 +31,7 @@ const CartItemsContainer = (props) =>{
                         </div>
                         <div className="cart-item-delete">
                             <DeleteItem id={item.title}/>
+                            <p>{item.ammount}</p>
                         </div>
                     </div>
                 </div>    

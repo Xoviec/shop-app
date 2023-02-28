@@ -44,6 +44,7 @@ const cartReducer = (state = INITIAL_STATE, action) => {
           ...state, list:[...state.list.filter((item)=> action.item !== item.title)]
         }
       
+      
       default:
       return state
     }
