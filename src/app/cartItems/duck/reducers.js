@@ -43,7 +43,10 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         return{
           ...state, list:[...state.list.filter((item)=> action.item !== item.title)]
         }
-      
+      case types.COMPONENT_UPDATE:
+        return{
+          ...state, list:[...state.list]
+        }
       
       default:
       return state

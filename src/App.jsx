@@ -29,10 +29,8 @@ export const App = (data) =>{
 
   return (
     <div className="App">
-      <div>
-        {/* <CartItemsContainer/> */}
-        {/* <AddCartItem title={'eesadas'}/> */}
-      </div>
+
+     
       {
         products ? 
           (

@@ -13,8 +13,12 @@ const deleteItem = item => ({
     type: types.DELETE_ITEM, item
 })
 
+const componentUpdate = () =>({
+    type: types.COMPONENT_UPDATE
+})
 export default {
     add,
     reset,
-    deleteItem
+    deleteItem,
+    componentUpdate
 }
