@@ -18,7 +18,7 @@ export const AddCartItem = (props) =>{
     }
 
     return( 
-        <button onClick={addItem}>
+        <button className="add-to-cart-btn" onClick={addItem}>
             Dodaj do koszyka
         </button>
  
