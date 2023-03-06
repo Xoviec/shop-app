@@ -44,11 +44,11 @@ export const Navbar = ({cart}) =>{
                                 Home
                             </button>
                         </Link>
-                        <Link to='/contact'>
+                        {/* <Link to='/contact'>
                             <button className={`${active==='/contact' ? `active` : 'non-active'} nav-btn`}>
                                 Contact
                             </button>
-                        </Link>
+                        </Link> */}
 
                     <div className='nav-item'>
                         <Cart/>

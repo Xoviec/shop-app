@@ -7,6 +7,8 @@ import AddCartItem from '../app/cartItems/components/AddCartItem';
 
 export const Product = (output) =>{
 
+
+
     // const [output, setOutput] = useState([])
     // const [data, setData] = useState([])
     // const [item, setItem] = useState()
