@@ -13,11 +13,11 @@ import  AddCartItem from '../app/cartItems/components/AddCartItem';
                         <img className="cursor-pointer object-contain hover:object-cover max-h-[300px] max-w-[300px] lg:max-w-[180px] lg:max-h-[180px] md:max-w-[120px] md:max-h-[120px] sm:max-w-[90px] sm:max-h-[90px]" src={props.thumbnail} alt="e" />
                     </Link>
                 </div>
-                <p className="product-title font-bold text-[1.8rem] lg:text-[1.2rem] md:text-[0.8rem] sm:text-[0.6rem]">
+                <p className=" font-bold text-[1.8rem] lg:text-[1.2rem] md:text-[0.8rem] sm:text-[0.6rem]">
                     {props.title}  
                 </p>
                 
-                <span className="product-price font-bold text-[2rem] mt-5 mb-1 lg:text-[1.6rem] md:text-[1rem] md:mt-2 sm:text-[0.75rem]">
+                <span className="product-price-landing font-bold text-[2rem] mt-5 mb-1 lg:text-[1.6rem] md:text-[1rem] md:mt-2 sm:text-[0.75rem]">
                     {props.price}$
                 </span>
             </div>

@@ -14,18 +14,6 @@ import types from './types'
 const INITIAL_STATE = {
   listName: 'Favourite',
   list: [
-      {
-        title: 'iphone',
-        price: 720,
-        thumbnail: '',
-        ammount: 1
-      },
-      {
-        title: 'iphonex',
-        price: 900,
-        thumbnail: '',
-        ammount: 1
-      }
   ]
 }
 
