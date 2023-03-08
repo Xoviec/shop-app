@@ -8,6 +8,7 @@ import rootReducer from './reducers';
 import { cartActions } from './app/cartItems/duck';
 import CartItemsContainer from './app/cartItems/components/CartItemsContainer';
 import AddCartItem  from './app/cartItems/components/AddCartItem';
+import BrandSelect from './components/brandSelect';
 
 
 
@@ -19,7 +20,7 @@ const store = createStore(rootReducer, composeWithDevTools())
 export const App = (data) =>{
 
 
-  
+  const [brand, setBrand] = useState('')
 
 
   const products = data.output.products
@@ -29,8 +30,9 @@ export const App = (data) =>{
 
   return (
     <div className="App">
+     <BrandSelect></BrandSelect>
 
-     
+      <div className="products-container">
       {
         products ? 
           (
@@ -52,6 +54,8 @@ export const App = (data) =>{
 
           </div>
       }
+      </div>
+      
     </div>
   );
 }
