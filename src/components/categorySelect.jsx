@@ -4,16 +4,22 @@ import { Listbox, Transition } from '@headlessui/react'
 const people = ['All', 'Apple', 'Samsung','HP Pavilion','OPPO','Microsoft Surface','Infinix','Impression of Acqua Di Gio','Royal_Mirage','Fog Scent Xpressio','Golden','luxury palace','LED Lights','Flying Wooden','Boho Decor','Dry Rose','fauji','Baking Food Items','Bake Parlor Big','Saaf & Khaas','Fair & Clear','ROREC White Rice','Dermive','Hemani Tea',"L'Oreal Paris",'Lord - Al-Rehab','Al Munakh']
 
 
-export default function BrandSelect({brandChange}) {
-  const [selected, setSelected] = useState(people[0])
+export default function CategorySelect({categories, categoryChange}) {
+
+
+    const [selected, setSelected] = useState(people[0])
+
+    const categoryList = ['All', ...categories]
+
+
+
 
     useEffect(()=>{
         if(selected==='All'){
-            brandChange('')
+            categoryChange('')
         }
         else{
-            brandChange(selected)
-
+            categoryChange(selected)
         }
     }, [selected])
 
@@ -36,7 +42,7 @@ export default function BrandSelect({brandChange}) {
             leaveTo="opacity-0"
           >
             <Listbox.Options className="dropdown  absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-              {people.map((person, personIdx) => (
+              {categoryList.map((person, personIdx) => (
                 <Listbox.Option
                   key={personIdx}
                   className={({ active }) =>
