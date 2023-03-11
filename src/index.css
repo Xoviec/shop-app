@@ -293,7 +293,11 @@ code {
 
 
 
-.div1 { grid-area:auto; }
+.div1 { 
+  grid-area:auto;
+  /* align-self: center; */
+  justify-self: center;
+ }
 
 
 
