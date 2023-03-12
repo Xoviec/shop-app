@@ -459,11 +459,26 @@ code {
   box-shadow: 0px 0px 5px -1px rgb(117 117 117);
 }
 
+/* .dropdown-button::before{
+  position: absolute;
+  content: 'Category';
+  top: -10px;
+  left: 10px;
+  padding: 2px;
+} */
+
 .fourth{
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.pseudo-placeholder{
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  backdrop-filter: blur(1px);
 }
 
 .fifth{
