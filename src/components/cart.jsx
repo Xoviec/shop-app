@@ -7,8 +7,6 @@ const Cart = (props) =>{
 
     const [visible, setVisible] = useState(false)
 
-
-
     const itemsNumber = props.items.list.map((item)=>item.ammount).reduce(function(a, b) { return a + b; }, 0);
 
     

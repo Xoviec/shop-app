@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import  AddCartItem from '../app/cartItems/components/AddCartItem';
 
 
-  export const ItemsLIst = (props) =>{
+  export const ItemsList = (props) =>{
 
     return(
         <>

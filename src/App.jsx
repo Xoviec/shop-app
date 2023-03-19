@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect, useRef, useState } from "react";
-import { ItemsLIst } from './components/itemsList';
+import { ItemsList } from './components/itemsList';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createStore } from 'redux';
 import rootReducer from './reducers';
@@ -70,7 +70,7 @@ export const App = (data) =>{
         products ? 
           (
             categoryFilter.map((product)=>
-              <ItemsLIst
+              <ItemsList
               title={product.title} 
               id={product.id} 
               brand={product.brand} 
