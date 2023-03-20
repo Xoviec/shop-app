@@ -17,8 +17,7 @@ const store = createStore(rootReducer, composeWithDevTools())
 
 
 
-export const App = (data) =>{
-
+export const App = ({output, dupa}) =>{
 
 
 
@@ -35,7 +34,6 @@ export const App = (data) =>{
   }, [])
 
 
-  console.log(categories)
 
   const categoryChange = (categoryName) =>{
     setCategory(categoryName)
@@ -45,13 +43,13 @@ export const App = (data) =>{
     setBrand(brandName)
   }
 
-  const products = data.output.products
+  const products = output.products
 
 
   const brandFilter = products?.filter((products)=> products.brand.includes(brand))
   const categoryFilter = brandFilter?.filter((products)=> products.category.includes(category))
 
-  console.log(products?.filter((products)=> products.brand.includes(brand)))
+  // console.log(products?.filter((products)=> products.brand.includes(brand)))
 
 
 
@@ -82,9 +80,12 @@ export const App = (data) =>{
               />      
             )
           )
+          // <div>
+          //   fetched
+          // </div>
         :
           <div>
-
+            {dupa}
           </div>
       }
       </div>
