@@ -61,11 +61,6 @@ code {
   gap: 5rem;
 }
 
-.nav-buttons button{
-  /* width: auto;
-  height: 3rem; */
-}
-
 .nav-btn{
   /* background-color: green; */
   width: 4rem;
@@ -101,9 +96,6 @@ code {
   visibility: hidden;
 }
 
-.cart-button{
-  /* background-color: transparent; */
-}
 
 .cart-component{
   max-height: 20rem;

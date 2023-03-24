@@ -17,7 +17,7 @@ const store = createStore(rootReducer, composeWithDevTools())
 
 
 
-export const App = ({output, dupa}) =>{
+export const App = ({output}) =>{
 
 
 
@@ -69,6 +69,7 @@ export const App = ({output, dupa}) =>{
           (
             categoryFilter.map((product)=>
               <ItemsList
+              key = {product.id}
               title={product.title} 
               id={product.id} 
               brand={product.brand} 
@@ -85,7 +86,7 @@ export const App = ({output, dupa}) =>{
           // </div>
         :
           <div>
-            {dupa}
+            Loading...
           </div>
       }
       </div>

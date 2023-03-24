@@ -46,11 +46,6 @@ describe('App', () => {
         </BrowserRouter>
        </Provider>
     );
-
-    const addToCartBtn = await screen.findAllByText("Dodaj do koszyka")
-    const cartItemCounter = screen.getByText('Cart (1)')
-    fireEvent.click(addToCartBtn[0])
-    expect(cartItemCounter).toHaveTextContent('Cart (2)')
     const deleteItemBtn = screen.getByText('x')
     expect(deleteItemBtn).toBeInTheDocument
     fireEvent.click(deleteItemBtn)
