@@ -5,13 +5,8 @@ import DeleteItem from "./DeleteItem";
 
 const CartItemsContainer = (props) =>{
 
-    console.log(props.visible)
-
     let totalPrice = 0;
-
-  
-
-    console.log(props.items.list)
+    
     return(
         <div className={`${props.visible ? `` : 'hidden'}`}>
             <div className="cart-component">

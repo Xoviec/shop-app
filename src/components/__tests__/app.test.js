@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { Main } from '../../Main';
@@ -6,9 +6,11 @@ import store from '../../store';
 import { Navbar } from '../navbar';
 import Cart from '../cart';
 import { App } from '../../App';
+import { ItemsList } from '../itemsList';
+import cartReducer from '../../app/cartItems/duck';
 
 describe('App', () => {
-  it('should render without throwing an error', () => {
+  it('Checks if cart updates properly', async () => {
     render(
        <Provider store={store}>
          <BrowserRouter>
@@ -16,24 +18,57 @@ describe('App', () => {
             <Navbar>
               <Cart></Cart>
             </Navbar>
-            <App></App>
+            <App>
+              <ItemsList></ItemsList>
+            </App>
           </Main>
         </BrowserRouter>
        </Provider>
     );
-    // screen.debug()
-      expect(screen.getByText('Koszyk jest pusty')).toBeInTheDocument();
+
+    const addToCartBtn = await screen.findAllByText("Dodaj do koszyka")
+    const cartItemCounter = screen.getByText('Cart (0)')
+    fireEvent.click(addToCartBtn[0])
+    expect(cartItemCounter).toHaveTextContent('Cart (1)')
 
   });
+  it('Checks if deleting item from cart works', async () => {
+    render(
+       <Provider store={store}>
+         <BrowserRouter>
+          <Main>
+            <Navbar>
+              <Cart></Cart>
+            </Navbar>
+            <App>
+              <ItemsList></ItemsList>
+            </App>
+          </Main>
+        </BrowserRouter>
+       </Provider>
+    );
+    const deleteItemBtn = screen.getByText('x')
+    expect(deleteItemBtn).toBeInTheDocument
+    fireEvent.click(deleteItemBtn)
+    expect(deleteItemBtn).not.toBeInTheDocument
+  });
+  it('should decrement counter', () => {
+    const initialState = { list:[] };
+    const action = {
+      type: 'ADD_ITEM',
+      title: 'Example Item',
+      price: 10,
+      thumbnail: 'http://example.com/image.jpg',
+      ammount: 1,
+    };
 
-  // it('should display the correct text', () => {
-  //   render(
-  //     <Provider store={store}>
-  //       <BrowserRouter>
-  //         <App />
-  //       </BrowserRouter>
-  //     </Provider>
-  //   );
-  //   expect(screen.getByText('Hello World!')).toBeInTheDocument();
-  // });
+
+    const newState = cartReducer(initialState, action);
+
+
+    console.log(newState)
+
+    // expect(newState).toEqual(0);
+  });
+
 });

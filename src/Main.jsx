@@ -10,6 +10,7 @@ import './index.css';
 
 export const Main = () =>{
 
+
     const [output, setOutput] = useState([])
     const [hasError, setHasError] = useState(false)
     useEffect(() =>{
@@ -20,12 +21,13 @@ export const Main = () =>{
     }, [])
 
 
+
     return(
         <>
         <Navbar/>
         <div className='container'>
             <Routes>
-                <Route path='/' element={<App output={output}/>}/>
+                <Route path='/' element={<App output={output} />}/>
                 <Route path='/contact' element={<Contact/>}/>
                 {/* <Route path='/users' element={<Users data={data} handleAddData={addData}/>}/> */}
                 <Route path='/:id' element={<Product output={output}/>}/>
