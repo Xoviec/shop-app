@@ -1,18 +1,9 @@
 import types from './types'
 
 
-// const INITIAL_STATE = {
-//     listName: 'Favourite',
-//     list: [
-//         'iphone',
-//         'iphoneX',
-//         'iphone 11'
-//     ]
-// }
-
 
 const INITIAL_STATE = {
-  listName: 'Favourite',
+  // listName: 'Favourite',
   list: [
   ]
 }

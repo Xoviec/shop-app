@@ -7,6 +7,7 @@ import { Navbar } from '../navbar';
 import Cart from '../cart';
 import { App } from '../../App';
 import { ItemsList } from '../itemsList';
+import cartReducer from '../../app/cartItems/duck';
 
 describe('App', () => {
   it('Checks if cart updates properly', async () => {
@@ -50,6 +51,24 @@ describe('App', () => {
     expect(deleteItemBtn).toBeInTheDocument
     fireEvent.click(deleteItemBtn)
     expect(deleteItemBtn).not.toBeInTheDocument
+  });
+  it('should decrement counter', () => {
+    const initialState = { list:[] };
+    const action = {
+      type: 'ADD_ITEM',
+      title: 'Example Item',
+      price: 10,
+      thumbnail: 'http://example.com/image.jpg',
+      ammount: 1,
+    };
+
+
+    const newState = cartReducer(initialState, action);
+
+
+    console.log(newState)
+
+    // expect(newState).toEqual(0);
   });
 
 });
