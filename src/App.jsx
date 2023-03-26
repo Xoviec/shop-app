@@ -55,7 +55,6 @@ export const App = ({output}) =>{
 
 
 
-
   return (
     <div className="App">
       <div className='filtering'>
@@ -69,7 +68,7 @@ export const App = ({output}) =>{
           (
             categoryFilter.map((product)=>
               <ItemsList
-              key = {product.id}
+              key={product.id}
               title={product.title} 
               id={product.id} 
               brand={product.brand} 

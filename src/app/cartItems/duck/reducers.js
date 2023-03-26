@@ -12,7 +12,7 @@ const cartReducer = (state = INITIAL_STATE, action) => {
     switch (action.type){
       case types.ADD_ITEM:
         return{
-          ...state, list: [...state.list, {title: action.item, price: action.item2, thumbnail: action.thumbnail, ammount: action.ammount}]
+          ...state, list: [...state.list, {title: action.item, price: action.item2, thumbnail: action.thumbnail, ammount: action.ammount, id: action.id}]
         }
       case types.RESET_CART:
         return{ 

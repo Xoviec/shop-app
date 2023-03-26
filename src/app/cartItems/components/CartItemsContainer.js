@@ -7,6 +7,7 @@ const CartItemsContainer = (props) =>{
 
     let totalPrice = 0;
     
+
     return(
         <div className={`${props.visible ? `` : 'hidden'}`}>
             <div className="cart-component">
@@ -57,7 +58,7 @@ const CartItemsContainer = (props) =>{
 }
 
 const mapStateToProps = state => ({
-    items: state.cartItems
+    items: state.cartItems,
 })
 
 export default connect(mapStateToProps, {})(CartItemsContainer)

@@ -6,7 +6,7 @@ import  AddCartItem from '../app/cartItems/components/AddCartItem';
 
     return(
         <>
-        <div className="product-container-landing div1 " >
+        <div key={props.id} className="product-container-landing div1 " >
             <div className='product-top'>
                 <div className="img-container-landing ">
                     <Link key={props.title} to={`/${props.id}`}>
