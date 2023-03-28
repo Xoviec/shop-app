@@ -23,7 +23,7 @@ import  AddCartItem from '../app/cartItems/components/AddCartItem';
             </div>
  
             <div>
-                <AddCartItem title={props.title} price={props.price} thumbnail={props.thumbnail}/>
+                <AddCartItem title={props.title} price={props.price} thumbnail={props.thumbnail} id={props.id}/>
             </div>
 
         </div>

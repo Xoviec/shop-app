@@ -6,7 +6,6 @@ import DeleteItem from "./DeleteItem";
 const CartItemsContainer = (props) =>{
 
     let totalPrice = 0;
-    
 
     return(
         <div className={`${props.visible ? `` : 'hidden'}`}>
@@ -16,7 +15,7 @@ const CartItemsContainer = (props) =>{
                 (   
                     totalPrice+=item.price*item.ammount,
 
-                    <div className="cart-item">
+                    <div className="cart-item" key={item.id}>
                     <div className="cart-image">
                         <img src={item.thumbnail} alt="e" />
                     </div>
