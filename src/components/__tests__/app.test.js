@@ -15,7 +15,6 @@ import types from '../../app/cartItems/duck/types';
 import cart from '../cart';
 
 
-
 // const middlewares = [thunk];
 // const mockStore = configureMockStore(middlewares);
 
@@ -127,6 +126,8 @@ describe('App', () => {
   });
 
   it('checks if product page works', async () => {
+    
+
     render(
       <Provider store={store}>
         <BrowserRouter>
@@ -143,10 +144,10 @@ describe('App', () => {
    )
 
     const productImg = await screen.findAllByRole('img')
-
+    
 
     fireEvent.click(productImg[0])
-
+    
     const productPage = await screen.findAllByTestId('product-page-div')
     expect(productPage).toBeInTheDocument
 
