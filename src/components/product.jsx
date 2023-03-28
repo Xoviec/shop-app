@@ -27,18 +27,15 @@ export const Product = (output) =>{
 
     const {id} = useParams();
 
-    console.log(output.output.products)
     const data = output.output.products
 
     const item = data?.find((data) => data.id === Number(id))
 
-    console.log(item)
 
-    console.log(item.thumbnail)
 
     return(
         <>
-        <div className='product-page'>
+        <div data-testid="product-page-div" className='product-page'>
             <div className="product-container div1 flex items-center justify-between p-10 bg-[#ecf3fd] my-3 animate-show-up h-[400px] w-[800px] rounded-sm shadow-3xl text-[#282828] mb-10 lg:w-[600px] lg:h-[300px] md:w-[400px] md:h-[200px] sm:w-[300px] sm:h-[150px]" >
                 <div className="img-container flex justify-center items-center mx-auto bg-red-200 max-h-[300px] max-w-[300px]  overflow-hidden rounded-xl lg:max-h-[180px] lg:max-w-[180px] md:rounded-md md:max-w-[120px] md:max-h-[120px] sm:rounded-sm sm:max-w-[90px] sm:max-h-[90px]">
                         <img className="cursor-pointer object-contain hover:object-cover max-h-[300px] max-w-[300px] lg:max-w-[180px] lg:max-h-[180px] md:max-w-[120px] md:max-h-[120px] sm:max-w-[90px] sm:max-h-[90px]" src={item.thumbnail} alt="e" />

@@ -15,6 +15,7 @@ import types from '../../app/cartItems/duck/types';
 import cart from '../cart';
 
 
+
 // const middlewares = [thunk];
 // const mockStore = configureMockStore(middlewares);
 
@@ -79,57 +80,76 @@ describe('App', () => {
        </BrowserRouter>
       </Provider>
    )
-    
 
-
-    // const store = mockStore( { cart: []  });
+    const cartItemCounter = screen.getByText('Cart (0)')
     const cartItem = 'Example Item';
     const itemPrice = 10;
     const itemThumbnail = 'http://example.com/image.jpg';
     const ammount = 1;
     const id = 1;
-    const expectedAction = {
-      type: types.ADD_ITEM,
-      item: cartItem,
-      item2: itemPrice,
-      thumbnail: itemThumbnail,
-      ammount: ammount,
-      id: id
-    };
-    const cartItemCounter = screen.getByText('Cart (0)')
 
-    // store.dispatch({type: 'ADD_ITEM', item: cartItem, item2: itemPrice,thumbnail: itemThumbnail, ammount: ammount, id: id})
     act(() => 
-
-    store.dispatch(actions.add(cartItem, itemPrice, itemThumbnail, ammount, id))
-
+      store.dispatch(actions.add(cartItem, itemPrice, itemThumbnail, ammount, id))
     )
     
-    // const actionsList = store.getActions();
-    // expect(actionsList).toEqual([expectedAction]);
+    expect(cartItemCounter.textContent).toBe('Cart (1)')
 
-    // console.log(actionsList)
-    // await console.log(store.getState())
+  });
+
+
+  it('should dispatch delete item', async () => {
     
-    console.log(cartItemCounter.textContent)
 
-    // const addToCartBtn = await screen.findAllByText("Dodaj do koszyka")
-    // fireEvent.click(addToCartBtn[0])
-    console.log(store.getState())
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+         <Main>
+           <Navbar>
+             <Cart></Cart>
+           </Navbar>
+           <App>
+             <ItemsList></ItemsList>
+           </App>
+         </Main>
+       </BrowserRouter>
+      </Provider>
+   )
 
-    
+    const cartItemCounter = screen.getByText('Cart (1)')
+    const cartItem = 'Example Item';
+
     act(() => 
-
-    store.dispatch(actions.deleteItem(cartItem))
+      store.dispatch(actions.deleteItem(cartItem))
     )
 
-    console.log(cartItemCounter.textContent)
+    expect(cartItemCounter.textContent).toBe('Cart (0)')
+
+  });
+
+  it('checks if product page works', async () => {
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+         <Main>
+           <Navbar>
+             <Cart></Cart>
+           </Navbar>
+           <App>
+             <ItemsList></ItemsList>
+           </App>
+         </Main>
+       </BrowserRouter>
+      </Provider>
+   )
+
+    const productImg = await screen.findAllByRole('img')
 
 
-    // screen.debug()
+    fireEvent.click(productImg[0])
 
-    
-    // expect(newState).toEqual(0);
+    const productPage = await screen.findAllByTestId('product-page-div')
+    expect(productPage).toBeInTheDocument
+
   });
 
 });
