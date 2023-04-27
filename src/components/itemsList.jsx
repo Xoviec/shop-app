@@ -9,7 +9,7 @@ import  AddCartItem from '../app/cartItems/components/AddCartItem';
         <div key={props.id} className="product-container-landing div1 " >
             <div className='product-top'>
                 <div className="img-container-landing ">
-                    <Link key={props.title} to={`/${props.id}`}>
+                    <Link data-testid="img-link" key={props.title} to={`/${props.id}`}>
                         <img className="" src={props.thumbnail} alt="e" />
                     </Link>
                 </div>

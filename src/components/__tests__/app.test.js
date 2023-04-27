@@ -1,6 +1,6 @@
-import { fireEvent, render, screen, act } from '@testing-library/react';
+import { fireEvent, render, screen, act, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 import { Main } from '../../Main';
 import store from '../../store';
 import { Navbar } from '../navbar';
@@ -13,6 +13,7 @@ import thunk from 'redux-thunk';
 import actions from '../../app/cartItems/duck/actions';
 import types from '../../app/cartItems/duck/types';
 import cart from '../cart';
+
 
 
 // const middlewares = [thunk];
@@ -130,26 +131,35 @@ describe('App', () => {
 
     render(
       <Provider store={store}>
-        <BrowserRouter>
-         <Main>
-           <Navbar>
-             <Cart></Cart>
-           </Navbar>
-           <App>
-             <ItemsList></ItemsList>
-           </App>
-         </Main>
-       </BrowserRouter>
+        <BrowserRouter initialEntries={["/:id"]} >
+          <Main>
+            <App>
+              <ItemsList></ItemsList>
+            </App>
+          </Main>
+        </BrowserRouter>
       </Provider>
    )
 
-    const productImg = await screen.findAllByRole('img')
-    
+  //  await waitFor(() => expect(getAllByTestId('img-link')).toBeVisible());
 
-    fireEvent.click(productImg[0])
-    
+   
+    const productImg = await screen.findAllByTestId('img-link')
+
+    fireEvent.click(productImg[1])
+
+    console.log(productImg[1])
+
+    screen.debug()
+
+
+
+
     const productPage = await screen.findAllByTestId('product-page-div')
+
     expect(productPage).toBeInTheDocument
+
+    screen.debug()
 
   });
 

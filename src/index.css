@@ -50,14 +50,14 @@ code {
   background-color: rgb(93, 236, 36);
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: flex-end;
 }
 
 .nav-buttons{
   width: 100vw;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 5rem;
 }
 
@@ -82,7 +82,7 @@ code {
 
 .cart-btn-div{
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   background-color: transparent;
 }
 
